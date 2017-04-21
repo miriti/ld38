@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="Ld38" package="com.michael-miriti.ld38" version="1.0.0" company="Michael Miriti" />
+	<app main="Main" path="export" file="game" />
+	
+	<source path="source" />
+	
+	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+	
+	<assets path="assets" />
+	
+</project>
