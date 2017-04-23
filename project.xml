@@ -9,5 +9,8 @@
 	<haxelib name="actuate" />
 	
 	<assets path="assets" />
+
+  <!-- <window background="#2b353a" width="600" height="460" resizable="false" /> -->
+  <window background="#2b353a" width="1200" height="920" resizable="false" />
 	
 </project>

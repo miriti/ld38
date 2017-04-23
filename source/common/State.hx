@@ -13,6 +13,7 @@ import lime.ui.GamepadAxis;
 class State extends GameSprite {
   public var hasControl: Bool = false;
   public var showCursor: Bool = true;
+  public var autoScale: Bool = true;
 
   public static var target_width = 1920;
   public static var target_height = 1080;
@@ -32,14 +33,13 @@ class State extends GameSprite {
       resize();
     }); 
 
-    resize();
-
     addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
     addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);
     addEventListener(Event.ENTER_FRAME, onEnterFrame);
   }
 
   function onAddedToStage(e:Event) {
+    resize();
     if(!showCursor) {
       Mouse.hide();
     }
@@ -67,13 +67,15 @@ class State extends GameSprite {
   }
 
   function resize() {
-    if(Lib.current.stage.stageWidth > Lib.current.stage.stageHeight) {
-      scaleX = scaleY = Lib.current.stage.stageHeight / target_height;
-    } else {
-      scaleX = scaleY = Lib.current.stage.stageWidth / target_width;
-    }   
+    if(autoScale) {
+      if(Lib.current.stage.stageWidth > Lib.current.stage.stageHeight) {
+        scaleX = scaleY = Lib.current.stage.stageHeight / target_height;
+      } else {
+        scaleX = scaleY = Lib.current.stage.stageWidth / target_width;
+      }   
 
-    x = (Lib.current.stage.stageWidth - (target_width * scaleX)) / 2;
+      x = (Lib.current.stage.stageWidth - (target_width * scaleX)) / 2;
+    }
   }
 
   public function gamepadAxis(axis: GamepadAxis, value: Float): Void {
