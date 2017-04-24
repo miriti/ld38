@@ -9,7 +9,7 @@ class Main extends StateMachine {
 	public function new () {
 		super ();
 
-    scaleX = scaleY = 4;
+    scaleX = scaleY = 3;
 
     room = new Room();
     room.x = 1;

@@ -12,7 +12,7 @@ class Fade extends Sprite {
     super();
 
     graphics.beginFill(0x000000);
-    graphics.drawRect(0, 0, 1920, 1080);
+    graphics.drawRect(0, 0, Lib.current.stage.stageWidth, Lib.current.stage.stageHeight);
     graphics.endFill();
 
     var from_alpha = fadein ? 0 : 1;
